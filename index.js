@@ -12,13 +12,13 @@ const utils = require('./lib/utils');
   const matchedProjects = utils.inputMatchesData(
     projects,
     alfy.input,
-    ['name', 'group'],
+    ['name', 'fullPath'],
   )
     .sort((a, b) => a.name.localeCompare(b.name))
     .map(project => ({
       title: utils.getTitle(project),
       subtitle: utils.getSubtitle(project),
-      icon: utils.getIcon(project),
+      icon: 'icon.png',
       arg: utils.getArgument(project),
       valid: true,
       text: {
